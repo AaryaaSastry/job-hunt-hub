@@ -1,0 +1,19 @@
+<html>
+<head>
+    <title>Employer Dashboard</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <h1>employer login</h1>
+</body>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('registered') === 'true') {
+    alert('Account created successfully! You can now log in.');
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
+</script>
+
+
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Employer Access - JobHub</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <!-- Top Navigation Bar -->
+  <header>
+    <div class="logo">
+      <img src="/uploads/logo.png" alt="JobHub" style="height: 40px; vertical-align: middle;" />
+    </div>
+    <nav>
+      <a href="/about">About Us</a>
+      <a href="/contact">Contact Us</a>
+      <a href="/how-it-works">How It Works</a>
+    </nav>
+  </header>
+
+  <!-- Main Layout -->
+  <main class="main-layout">
+    <!-- Left Panel -->
+    <section class="left-panel">
+      <img src="/uploads/logo.png" alt="JobHub Logo" class="main-logo" />
+      <h2>Looking to Hire?</h2>
+      <p>Join JobHub and connect with top talent quickly and easily.</p>
+    </section>
+
+    <!-- Right Panel -->
+    <section class="right-panel">
+      <div class="login-container">
+        <h2>Employer Access</h2>
+        <form class="login-form" action="/employer/options" method="POST" autocomplete="off">
+          
+          <label>Username</label>
+          <input type="text" name="username" placeholder="username" autocomplete="off" readonly onfocus="this.removeAttribute('readonly');" required/>
+
+          <label>Password</label>
+          <input type="password" name="password" placeholder="password" autocomplete="new-password" readonly onfocus="this.removeAttribute('readonly');" required />
+
+          <button type="submit">Login</button>
+        </form>
+        <div class="links">
+          <a href="/employer/options">Don’t have an account? Sign up</a>
+        </div>
+      </div>
+    </section>
+  </main>
+    <script>
+  // Check if ?registered=true exists in URL
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('registered') === 'true') {
+    alert('Account created successfully! You can now log in.');
+    // Remove query param from URL without reloading
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
+    </script>
+</body>
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>JobSeeker Signup</title>
+  <link rel="stylesheet" href="/css/jobseeker_register.css" />
+</head>
+<body>
+ <header>
+    <div class="logo">
+      <img src="/uploads/logo.png" alt="JobHub" style="height:40px; vertical-align:middle;">
+    </div>
+    <nav>
+      <a href="/about">About Us</a>
+      <a href="/contact">Contact Us</a>
+      <a href="/how-it-works">How It Works</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <h2>Job Seeker Signup</h2>
+    <form action="/jobseeker/register" method="POST">
+      <input type="text" name="username" placeholder="Username" required />
+      <input type="email" name="email" placeholder="Email" required />
+      <input type="password" name="password" placeholder="Password" required />
+      <button type="submit">Register</button>
+    </form>
+  </div>
+
+
+
+
+<script>
+  // Check if ?registered=true exists in URL
+  const params = new URLSearchParams(window.location.search);
+  if (params.get('registered') === 'true') {
+    alert('Account created successfully! You can now log in.');
+    // Remove query param from URL without reloading
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
+</script>
+</body>
+
+
+</html>
